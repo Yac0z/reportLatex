@@ -1,0 +1,136 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+
+% Différentes options pour la classe :
+% - taille de la fonte    : 10pt, 11pt, 12pt
+% - recto ou recto-verso    : oneside, twoside
+% - stade de développement    : draft, final
+
+\usepackage[french]{babel}
+% \usepackage[english]{babel}
+%\usepackage[latin1]{inputenc}    % Pour utiliser les lettres accentuées
+
+%\usepackage[utf8]{inputenc}%           gestion des accents (source)
+\usepackage[T1]{fontenc}%              gestion des accents (PDF)
+%\usepackage[francais,english]{babel}%          gestion du français
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}%                 caractères additionnels
+
+\usepackage[pdftex]{graphicx}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{hyperref}
+\usepackage[french]{varioref}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{amsmath}
+\usepackage{ifpdf} % part of the hyperref bundle
+\usepackage{array} 
+\usepackage{tabularx}
+\usepackage{tabularray}
+\usepackage{cellspace}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{etoc}
+\usepackage{geometry}
+\usepackage[explicit]{titlesec}
+\usepackage{xhfill}
+\usepackage{pdfpages}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{enumitem}
+
+%\usepackage{abstract}
+\newcolumntype{c}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{l}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{r}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+
+ % set fonts for nicer pdf view
+ \IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
+
+
+\pagestyle{fancy}
+\fancyhead[L]{\nouppercase\leftmark} %pour afficher le nom du chapitre à gauche
+\fancyhead[C]{}
+\fancyhead[R]{} %pour afficher le nom de la section à droite
+
+\usepackage{float}
+
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{\textbf{\thepage}}
+
+
+
+
+
+
+
+% Début du document
+\begin{document}
+
+% \include{garde_fin}
+% \include{garde_fin1}
+
+
+% \includepdf[pages={1}]{images/page de garde t4g.pdf}
+
+
+\newpage
+
+\pagenumbering{roman}
+\renewcommand{\thepage}{}
+
+% \include{Dedicaces}
+% \include{Dedicace2}
+% \include{Remerciements}
+
+\renewcommand{\contentsname}{Table of Contents}
+\tableofcontents     % Table of Contents
+
+\renewcommand{\listfigurename}{List of Figures}
+\listoffigures        % Liste des figures
+
+\renewcommand{\listtablename}{List of Tables}
+\listoftables        % Liste des tableaux
+%\include{Acro}
+
+\newpage
+\pagenumbering{arabic}
+\include{Introduction}
+\include{Chapter1}
+
+\include{Chapter2}
+
+\include{Chapter3}
+
+\include{Chapter4}
+
+\include{chapter5}
+
+\include{chapter6}
+
+% \include{Conclusion}
+
+\include{bibliography}
+
+% \bibliographystyle{alpha}
+% \bibliography{Bibliography}
+% \addcontentsline{toc}{chapter}{Bibliographie}% ajouter son entrée dans la table
+%\include{Acro}
+\pagestyle{empty}
+\include{Annexe1}
+
+
+\renewcommand{\listtablename}{Tables}
+
+
+% Fin du document
+\end{document}
